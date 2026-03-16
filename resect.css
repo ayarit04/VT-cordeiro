@@ -1,0 +1,100 @@
+/* Reset CSS baseado em Andy Bell */
+
+/* Remove todos os estilos padrão */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  border: 0; /* <--- Esto elimina el borde de todos los elementos */
+  box-sizing: border-box;
+}
+
+/* Define comportamento de altura 100% */
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+background-color: black;
+  font-family: system-ui, -apple-system, sans-serif;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Remove estilos de lista */
+ul,
+ol {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* Remove sublinhado de links */
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Define altura automática para imagens */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Remove estilos padrão de botões */
+button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  font: inherit;
+  color: inherit;
+}
+
+/* Remove estilos padrão de input e textarea */
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+/* Remove sublinhado de abbr */
+abbr[title] {
+  text-decoration: underline dotted;
+}
+
+/* Alinha texto em input com placeholder */
+::placeholder {
+  opacity: 1;
+}
+
+/* Remove espaço extra em elementos vazios */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* Define display padrão para elementos semânticos */
+main,
+nav,
+header,
+footer,
+section,
+article,
+aside {
+  display: block;
+}

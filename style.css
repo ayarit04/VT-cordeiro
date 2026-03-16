@@ -1,0 +1,104 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+
+/* Importação no topo do seu style.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+
+/* Nova classe para o hero alinhado e professores visíveis */
+.hero-alinhado {
+    position: relative;
+    width: 100%;
+    height: 90vh; /* Mantém a altura da seção */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha o conteúdo ao topo */
+    align-items: center;
+    text-align: center;
+    overflow: hidden;
+    color: #ffffff;
+    
+    /* VARIÁVEL DE OPACIDADE (Ajuste o quanto escuro você quer) */
+    --opacidad-negro: 0.6; /* 0.0 é totalmente transparente, 1.0 é totalmente preto */
+
+    /* Define a imagem de fundo diretamente no container */
+    background-image: linear-gradient(
+        rgba(0, 0, 0, var(--opacidad-negro)), 
+        rgba(0, 0, 0, var(--opacidad-negro))
+    ), 
+    url("./imag/header-foto.jpeg"); /* Caminho da sua imagem */
+
+    background-size: cover;
+    background-position: center bottom; /* Centraliza a imagem e ALINHA O FUNDO COM O RODAPÉ */
+    background-repeat: no-repeat;
+}
+
+/* Garante que o conteúdo fique no topo */
+.hero-alinhado .hero-content {
+    position: relative;
+    z-index: 2; /* Fica acima do gradiente */
+    padding: 20px;
+    margin-top: 100px; /* Ajuste manual para descer os textos do topo da janela */
+}
+
+.hero h1 {
+    font-size: 3.5rem; /* Título bem grande */
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Estilo do botão (Mantém o seu original) */
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background-color: #ed1c24;
+    color: white;
+    border: 2px solid #ed1c24;
+}
+
+/* Estilo do botão (Mantém o seu original) */
+.btn-secondary {
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+    padding: 12px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    display: inline-block;
+}
+
+.btn-secondary:hover {
+    background-color: #ed1c24;
+    color: white;
+    border: 2px solid #ed1c24;
+}
