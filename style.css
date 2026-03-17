@@ -109,3 +109,219 @@ body {
 .btns{
     margin-top:30px;
 }
+
+/* Estilos para la sección de Aulas */
+#aulas {
+    padding: 60px 20px;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+#aulas h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 50px;
+    color: #ed1c24;
+}
+
+.aula-contenedor {
+    background-color: #262626;
+    padding: 40px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    border-left: 5px solid #ed1c24;
+    scroll-margin-top: 120px;
+}
+
+.aula-contenedor h3 {
+    font-size: 2rem;
+    color: #ed1c24;
+    margin-bottom: 20px;
+}
+
+.aula-contenedor p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #ccc;
+    margin-bottom: 15px;
+}
+
+.aula-contenedor p strong {
+    color: #fff;
+}
+
+/* Estilos para la sección Sobre Nós */
+#sobre-nos {
+    padding: 60px 20px;
+    background-color: #000;
+    color: #fff;
+}
+
+.seccion-sobre {
+    scroll-margin-top: 120px;
+    margin-bottom: 50px;
+    padding: 40px;
+    background-color: #1a1a1a;
+    border-radius: 8px;
+}
+
+.seccion-sobre h2 {
+    font-size: 2rem;
+    color: #ed1c24;
+    margin-bottom: 20px;
+}
+
+.seccion-sobre p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+.grid-sobre {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: center;
+}
+
+.grid-sobre div:first-child {
+    padding-right: 20px;
+}
+
+.grid-sobre h2 {
+    font-size: 2rem;
+    color: #ed1c24;
+    margin-bottom: 20px;
+}
+
+.grid-sobre p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: #1a1a1a;
+    padding: 30px;
+    border-radius: 8px;
+    border-left: 5px solid #ed1c24;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #ed1c24;
+    margin-bottom: 15px;
+}
+
+.card p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+    .grid-sobre {
+        grid-template-columns: 1fr;
+    }
+    
+    .grid-sobre div:first-child {
+        padding-right: 0;
+    }
+}
+
+/* Estilos para la sección de Profesores */
+#profesores {
+    padding: 60px 20px;
+    background-color: #1a1a1a;
+    color: #fff;
+}
+
+#profesores h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ed1c24;
+    margin-bottom: 50px;
+}
+
+.profesores-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.profesor-card {
+    position: relative;
+    flex-basis: 320px;
+    height: 350px;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: #000;
+    scroll-margin-top: 120px;
+}
+
+.profesor-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.info-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: 20px;
+    box-sizing: border-box;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.profesor-card:hover .info-overlay {
+    transform: translateY(0);
+}
+
+.profesor-card:hover img {
+    transform: scale(1.05);
+    opacity: 0.6;
+}
+
+.info-overlay h3 {
+    font-size: 1.3rem;
+    color: #ed1c24;
+    margin: 0 0 10px 0;
+}
+
+.info-overlay p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: #fff;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .profesores-contenedor {
+        gap: 20px;
+    }
+    
+    .profesor-card {
+        flex-basis: 280px;
+        height: 350px;
+    }
+}

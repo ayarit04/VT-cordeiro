@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cordeiro Artes Marciais | Jiu-Jitsu & Muay Thai</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="resect.css">
+    <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="header.css">
 
 </head>
@@ -17,14 +17,27 @@
         <nav class="nav">
             <ul class="menu">
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre-nos">Sobre Nós</a></li>
-                <li><a href="#aulas">Aulas</a></li>
+                <li><a href="#sobre-nos">Sobre Nós</a>
+                    <ul class="sub-menu">
+                        <li><a href="#historia">História</a></li>
+                        <li><a href="#mision">Missão</a></li>
+                        <li><a href="#vision">Visão</a></li>
+                    </ul>
+                </li>
+                <li><a href="#aulas">Aulas</a>
+                    <ul class="sub-menu">
+                        <li><a href="#jiujitsu">Jiu-Jitsu</a></li>
+                        <li><a href="#jiujitsu-kids">Jiu-Jitsu Kids</a></li>
+                        <li><a href="#muay-thai">Muay Thai</a></li>
+                        <li><a href="#profesores">Professores</a></li>
+                    </ul>
+                </li>
                 <li><a href="#ubicacion">Localização</a></li>
             </ul>
             <a href="https://docs.google.com/forms/d/e/1FAIpQLSd0VC-WaD00KSabrFVhS-_VgnRaqlXrQmKDN8AuPev_y6AHSQ/viewform?usp=publish-editor" class="btn-matricula">Matricule-se</a>
         </nav>
     </header>
-
+<main>
     <section class="hero hero-alinhado" id="inicio">
     <div class="hero-content">
         <h1>MUDE SUA VIDA NO TATAME</h1>
@@ -35,35 +48,97 @@
     </div>
 </section>
     <section id="sobre-nos">
-        <div class="grid-sobre">
-            <div>
-                <h2>Nossa História</h2>
-                <p>Com liderança do Mestre Cordeiro, nossa academia foca na disciplina e na evolução constante dos alunos, desde o nível iniciante até o competidor de elite.</p>
+        <div id="historia" class="seccion-sobre">
+            <div class="grid-sobre">
+                <div>
+                    <h2>Nossa História</h2>
+                    <p>Com liderança do Mestre Cordeiro, nossa academia foca na disciplina e na evolução constante dos alunos, desde o nível iniciante até o competidor de elite.</p>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1599058917232-d750c1830031?q=80&w=600" alt="Treino" style="width: 100%; border-radius: 8px;">
+                </div>
             </div>
-            <div>
-                <img src="https://images.unsplash.com/photo-1599058917232-d750c1830031?q=80&w=600" alt="Treino" style="width: 100%; border-radius: 8px;">
-            </div>
+        </div>
+
+        <div id="mision" class="seccion-sobre">
+            <h2>Missão</h2>
+            <p>Formar cidadãos resilientes através do Jiu-Jitsu e Muay Thai, desenvolvendo não apenas técnicas de combate, mas também valores como respeito, disciplina e caráter.</p>
+        </div>
+
+        <div id="vision" class="seccion-sobre">
+            <h2>Visão</h2>
+            <p>Ser referência nas artes marciais em Cascavel, reconhecida pela excelência técnica, formação de atletas competitivos e contribuição ao desenvolvimento pessoal de nossos alunos.</p>
         </div>
 
         <div class="card-container">
             <div class="card">
-                <h3>Missão</h3>
-                <p>Formar cidadãos resilientes através do Jiu-Jitsu e Muay Thai.</p>
-            </div>
-            <div class="card">
                 <h3>Valores</h3>
                 <p>Respeito, Hierarquia, Disciplina e Família.</p>
-            </div>
-            <div class="card">
-                <h3>Professores</h3>
-                <p>Equipe técnica altamente qualificada e certificada.</p>
             </div>
         </div>
     </section>
 
     <section id="aulas">
         <h2>Aulas</h2>
-        <p>Em breve, mais informações sobre nossas aulas.</p>
+        
+        <div id="jiujitsu" class="aula-contenedor">
+            <h3>Jiu-Jitsu</h3>
+            <p>Aprende las técnicas fundamentales del Jiu-Jitsu brasileño. Nuestras clases se enfocam en el desarrollo técnico, físico y mental de los alumnos. Desde principiantes hasta competidores avanzados.</p>
+            <p><strong>Horarios:</strong> Lunes a viernes de 19:00 a 20:30</p>
+        </div>
+
+        <div id="jiujitsu-kids" class="aula-contenedor">
+            <h3>Jiu-Jitsu Kids</h3>
+            <p>Clases especialmente diseñadas para niños de 4 a 12 años. Enfatizamos la disciplina, el respeto y el trabajo en equipo a través del arte de la defensa personal.</p>
+            <p><strong>Horarios:</strong> Sábados de 09:00 a 10:00</p>
+        </div>
+
+        <div id="muay-thai" class="aula-contenedor">
+            <h3>Muay Thai</h3>
+            <p>Entrena el "arte de los ocho miembros" con técnicas de puño, codo, rodilla y tibia. Mejora tu condición física mientras aprendes una de las artes marciales más efectivas del mundo.</p>
+            <p><strong>Horarios:</strong> Martes y jueves de 20:00 a 21:30</p>
+        </div>
+    </section>
+
+    <section id="profesores">
+        <h2>Professores</h2>
+        <div class="profesores-contenedor">
+            <div class="profesor-card">
+                <img src="./imag/fotoperfil.webp" alt="Professor">
+                <div class="info-overlay">
+                    <h3>Mestre Adriano Cordeiro</h3>
+                    <p>Fundador e instrutor principal da academia. Com mais de 20 anos de experiência em Jiu-Jitsu e Muay Thai, treinador de atletas de elite.</p>
+                </div>
+            </div>
+            <div class="profesor-card">
+                <img src="./imag/fotoperfil.webp" alt="Professor">
+                <div class="info-overlay">
+                    <h3>Professor Jeferson Medina</h3>
+                    <p>Especialista em Jiu-Jitsu ao alcance de principiantes. Dedicado a desenvolver técnicas fundamentais com paciência e didática apurada.</p>
+                </div>
+            </div>
+            <div class="profesor-card">
+                <img src="./imag/fotoperfil.webp" alt="Professor">
+                <div class="info-overlay">
+                    <h3>Professor Felipe C</h3>
+                    <p>Instrutor de Jiu-Jitsu com formação em educação física. Comprometido em ensinar técnicas eficazes e promover o desenvolvimento pessoal dos alunos.</p>
+                </div>
+            </div>
+            <div class="profesor-card">
+                <img src="./imag/fotoperfil.webp" alt="Professor">
+                <div class="info-overlay">
+                    <h3>Professor Jean Medina</h3>
+                    <p>Profissional responsável pelas aulas de Jiu-Jitsu Kids. Cria um ambiente divertido e seguro para o desenvolvimento das crianças.</p>
+                </div>
+            </div>
+            <div class="profesor-card">
+                <img src="./imag/fotoperfil.webp" alt="Professor">
+                <div class="info-overlay">
+                    <h3>Professor Carlos Santos</h3>
+                    <p>Instrutor de Muay Thai com vasta experiência em competições. Focado em aprimorar a técnica e a resistência dos alunos.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="ubicacion">
@@ -75,6 +150,7 @@
         </div>
         
     </section>
+</main>
 
     <footer style="padding: 40px; text-align: center; color: #555; background: #000;">
         <p>© 2026 Team Cordeiro Artes Marciais. Todos os direitos reservados.</p>
