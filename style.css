@@ -85,27 +85,6 @@ body {
     border: 2px solid #ed1c24;
 }
 
-/* Estilo do botão (Mantém o seu original) */
-.btn-secondary {
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-    padding: 12px 30px;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    font-size: 16px;
-    transition: all 0.3s ease;
-    display: inline-block;
-}
-
-.btn-secondary:hover {
-    background-color: #ed1c24;
-    color: white;
-    border: 2px solid #ed1c24;
-}
-
 .btns{
     margin-top:30px;
 }
@@ -130,7 +109,8 @@ body {
     margin-bottom: 30px;
     border-radius: 8px;
     border-left: 5px solid #ed1c24;
-    scroll-margin-top: 120px;
+    display: flex;
+    flex-direction: column;
 }
 
 .aula-contenedor h3 {
@@ -150,89 +130,356 @@ body {
     color: #fff;
 }
 
-/* Estilos para la sección Sobre Nós */
+/* =========================================
+   QUADRO DE HORÁRIOS (SCHEDULE BOX)
+   ========================================= */
+.horarios-box {
+    background-color: #111;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 12px 15px;
+    margin: 15px 0 0 0;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+    order: 2;
+    max-width: 400px;
+    display: inline-block;
+}
+
+.horarios-box h4 {
+    color: #fff;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 2px solid #ed1c24;
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
+.horarios-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.horarios-lista li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #2a2a2a;
+    font-size: 0.85rem;
+}
+
+.horarios-lista li:last-child {
+    border-bottom: none;
+}
+
+.horarios-lista .dia {
+    color: #ccc;
+    font-weight: 500;
+}
+
+.horarios-lista .hora {
+    color: #ed1c24;
+    font-weight: bold;
+    background-color: rgba(237, 28, 36, 0.1);
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* =========================================
+   GALERIA DE FOTOS (AULAS)
+   ========================================= */
+.galeria-aulas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 0;
+    order: 1;
+}
+
+.galeria-aulas img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: transform 0.4s ease, border-color 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+.galeria-aulas img:hover {
+    transform: scale(1.05);
+    border-color: #ed1c24;
+    z-index: 2;
+    position: relative;
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 480px) {
+    .horarios-lista li {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 3px;
+    }
+    
+    .galeria-aulas {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================================
+   ESTILOS GERAIS DA SEÇÃO SOBRE NÓS
+   ========================================= */
+
 #sobre-nos {
     padding: 60px 20px;
     background-color: #000;
     color: #fff;
+    text-align: center;
+    background-image: url('./imag/fondo-sobre-nos.png');
+    background-size: cover;
+    background-position: center;
+    position: relative;
 }
 
-.seccion-sobre {
-    scroll-margin-top: 120px;
+#sobre-nos::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 0;
+}
+
+#sobre-nos > * {
+    position: relative;
+    z-index: 1;
+}
+
+#sobre-nos h2 {
+    font-size: 2.5rem;
+    color: #ed1c24; /* Vermelho da marca */
+    margin-bottom: 10px;
+}
+
+.intro-sobre {
+    font-size: 1.1rem;
+    color: #ccc;
     margin-bottom: 50px;
-    padding: 40px;
-    background-color: #1a1a1a;
-    border-radius: 8px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.seccion-sobre h2 {
+/* =========================================
+   HISTORIA BOX (Con efecto de cambio de fondo)
+   ========================================= */
+.historia-box {
+    background-color: rgba(26, 26, 26, 0.9);
+    padding: 40px;
+    margin-bottom: 0px;
+    border-radius: 8px;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    
+    /* LA CLAVE: Transición para que el fondo no cambie de golpe */
+    transition: all 0.5s ease; 
+    border: 1px solid transparent; 
+}
+
+/* EFEITO AO PASSAR O MOUSE NO BOX INTEIRO */
+.historia-box:hover {
+    background-color: #ed1c24; /* Cambia al rojo de la marca */
+    transform: translateY(-5px); /* Pequeño salto hacia arriba */
+    box-shadow: 0 15px 40px rgba(237, 28, 36, 0.3); /* Sombra roja sutil */
+}
+
+.historia-box h3 {
     font-size: 2rem;
     color: #ed1c24;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
+    text-align: left;
+    transition: color 0.5s ease;
 }
 
-.seccion-sobre p {
+/* El título cambia a blanco para que se lea bien sobre el fondo rojo */
+.historia-box:hover h3 {
+    color: #fff;
+}
+
+.historia-box p {
     font-size: 1rem;
-    line-height: 1.6;
-    color: #f0f0f0;
+    line-height: 1.8;
+    color: #ccc;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    text-align: justify;
+    transition: all 0.5s ease;
 }
 
-.grid-sobre {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 30px;
+/* El texto se vuelve blanco puro y más nítido en el hover */
+.historia-box:hover p {
+    color: #fff;
+}
+/* =========================================
+   CONTAINER E CARDS COM EFEITO HOVER
+   ========================================= */
+.container-hover {
+    width: 100%;
+    max-width: 1000px; /* Largura máxima do container */
+    position: relative;
+    display: flex;
+    justify-content: space-between; /* Espaçamento entre os cards */
+    gap: 30px; /* Distância entre os cards */
+    margin: 0 auto; /* Centraliza o container */
+}
+
+.card-hover {
+    position: relative;
+    cursor: pointer;
+    flex: 1; /* Faz os cards dividirem o espaço igualmente */
+    min-width: 300px; /* Largura mínima do card */
+}
+
+.card-hover .face-hover {
+    width: 100%;
+    height: 200px; /* Altura de cada face */
+    transition: 0.5s;
+    border-radius: 8px; /* Bordes suaves modernos */
+    overflow: hidden; /* Garante que o conteúdo não saia */
+}
+
+/* --- FACE 1: O LADO QUE APARECE PRIMEIRO --- */
+.card-hover .face-hover.face1 {
+    position: relative;
+    background: #fff; /* Preto profundo para contraste */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    transform: translateY(100px); /* Posição inicial (deslocada) */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* EFEITO AO PASSAR O MOUSE (FACE 1 SOBE) */
+.card-hover:hover .face-hover.face1 {
+    background: #fff; /* Branco */
+    transform: translateY(0);
+}
+
+.card-hover .face-hover.face1 .content-hover {
+    opacity: 0.9; /* Opacidade inicial (apagado) */
+    transition: 0.5s;
+    width: 100%;
+}
+
+.card-hover:hover .face-hover.face1 .content-hover {
+    opacity: 1; /* Opacidade total no hover */
+}
+
+/* Estilos para o Ícone/Imagem na FACE 1 */
+.icone-box {
+    width: 100%;
+    height: 100px; /* Espaço para o ícone */
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
     align-items: center;
 }
 
-.grid-sobre div:first-child {
-    padding-right: 20px;
+/* APLICAÇÃO DAS IMAGENS EXCLUSIVAS */
+.box-missao {
+    background-image: url("./imag/missao.png"); /*  foto de Missão */
+    background-size: contain; /* Mostra a imagem inteira sem cortar */
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.grid-sobre h2 {
-    font-size: 2rem;
-    color: #ed1c24;
-    margin-bottom: 20px;
+.box-visao {
+    background-image: url("./imag/visao.png"); /* foto de Visão */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.grid-sobre p {
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #f0f0f0;
+.box-valores {
+    background-image: url("./imag/valores.png"); /* foto de Valores */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
-.card-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
-    margin-top: 40px;
-}
-
-.card {
-    background-color: #1a1a1a;
-    padding: 30px;
-    border-radius: 8px;
-    border-left: 5px solid #ed1c24;
-}
-
-.card h3 {
+.card-hover .face-hover.face1 .content-hover h3 {
+    margin: 10px 0 0;
+    padding: 0;
+    color: #333;
+    text-align: center;
     font-size: 1.5rem;
+    text-transform: uppercase;
+}
+
+
+/* --- FACE 2: O LADO QUE SURGE NO HOVER --- */
+.card-hover .face-hover.face2 {
+    position: relative;
+    background: #ed1c24; /* Fundo vermelho */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    transform: translateY(-100px); /* Posição inicial (deslocada) */
+}
+
+/* EFEITO AO PASSAR O MOUSE (FACE 2 DESCE) */
+.card-hover:hover .face-hover.face2 {
+    transform: translateY(0);
+}
+
+.card-hover .face-hover.face2 .content-hover p {
+    margin: 0;
+    padding: 0;
+    color: #fff; /* Texto branco para leitura no vermelho */
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Estilo do Botão na FACE 2 (Seu estilo original) */
+.btn-detalhes {
+    margin: 15px 0 0;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 900;
     color: #ed1c24;
-    margin-bottom: 15px;
+    padding: 8px 20px;
+    border: 2px solid #fff;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    transition: 0.3s;
 }
 
-.card p {
-    font-size: 0.95rem;
-    line-height: 1.6;
-    color: #f0f0f0;
+.btn-detalhes:hover {
+    background-color: #fff;
+    color: #ed1c24;
 }
 
+/* RESPONSIVIDADE PARA CELULAR */
 @media (max-width: 768px) {
-    .grid-sobre {
-        grid-template-columns: 1fr;
+    .container-hover {
+        flex-direction: column; /* Cards em coluna no celular */
+        gap: 20px;
     }
-    
-    .grid-sobre div:first-child {
-        padding-right: 0;
+    .card-hover {
+        width: 100%;
+        min-width: 100%;
     }
 }
 
@@ -266,7 +513,6 @@ body {
     border-radius: 12px;
     overflow: hidden;
     background-color: #000;
-    scroll-margin-top: 120px;
 }
 
 .profesor-card img {
