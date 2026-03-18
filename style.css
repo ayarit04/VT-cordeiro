@@ -539,18 +539,6 @@ body {
     color: #ed1c24;
 }
 
-/* RESPONSIVIDADE PARA CELULAR */
-@media (max-width: 768px) {
-    .container-hover {
-        flex-direction: column; /* Cards em coluna no celular */
-        gap: 20px;
-    }
-    .card-hover {
-        width: 100%;
-        min-width: 100%;
-    }
-}
-
 /* Estilos para la sección de Profesores */
 #profesores {
     padding: 60px 20px;
@@ -581,6 +569,7 @@ body {
     border-radius: 12px;
     overflow: hidden;
     background-color: #000;
+    cursor: pointer;
 }
 
 .profesor-card img {
@@ -628,15 +617,3 @@ body {
     color: #fff;
     margin: 0;
 }
-
-@media (max-width: 768px) {
-    .profesores-contenedor {
-        gap: 20px;
-    }
-    
-    .profesor-card {
-        flex-basis: 280px;
-        height: 350px;
-    }
-}
-
