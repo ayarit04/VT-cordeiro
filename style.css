@@ -217,8 +217,63 @@ body {
     z-index: 2;
     position: relative;
 }
+/* =========================================
+   ESTILOS DEL VISOR CENTRADO (LIGHTBOX)
+   ========================================= */
+#visor-imagenes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo muy oscuro */
+    z-index: 9999; /* Por encima de todo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    /* Animación de entrada */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+}
 
-#muay-thai .galeria-aulas img {
+/* Clase que se activa con JS para mostrarlo */
+#visor-imagenes.activo {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+#visor-imagenes img {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 8px;
+    box-shadow: 0 0 30px rgba(237, 28, 36, 0.4); /* Brillo rojo alrededor de la foto */
+    
+    /* Efecto de zoom al abrir */
+    transform: scale(0.8);
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+#visor-imagenes.activo img {
+    transform: scale(1);
+}
+
+.cerrar-visor {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: #fff;
+    font-size: 50px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cerrar-visor:hover {
+    color: #ed1c24;
+}
+ .galeria-aulas img {
     object-fit: contain;
     background-color: #111;
 }
