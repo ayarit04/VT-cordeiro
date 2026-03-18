@@ -1,32 +1,66 @@
 document.addEventListener("DOMContentLoaded", () => {
-    
-    // ... (Aquí está tu código anterior del título mágico) ...
-
-    /* =========================================
-       CÓDIGO PARA EL VISOR DE IMÁGENES (LIGHTBOX)
-       ========================================= */
     const visor = document.getElementById('visor-imagenes');
-    const imagenAmpliada = document.getElementById('imagen-ampliada');
+    const contenedorContenido = document.getElementById('contenedor-contenido-ampliado');
     const btnCerrar = document.querySelector('.cerrar-visor');
-    const imagenesGaleria = document.querySelectorAll('.galeria-aulas img');
 
-    // Al hacer clic en cualquier imagen de la galería
-    imagenesGaleria.forEach(img => {
-        img.addEventListener('click', () => {
-            imagenAmpliada.src = img.src; // Copiamos la ruta de la foto tocada
-            visor.classList.add('activo'); // Mostramos el visor centrado
-        });
-    });
+    // Función para abrir el visor con contenido específico
+    const abrirVisor = (nodoContenido, esImagen = false) => {
+        contenedorContenido.innerHTML = ''; // Limpiamos contenido previo
+        
+        if (esImagen) {
+            // Si es imagen, creamos un elemento img nuevo
+            const nuevaImg = document.createElement('img');
+            nuevaImg.src = nodoContenido.src;
+            nuevaImg.alt = nodoContenido.alt;
+            nuevaImg.classList.add('contenido-zoom-img');
+            contenedorContenido.appendChild(nuevaImg);
+        } else {
+            // Si es tabla, clonamos el nodo completo
+            const clonTabla = nodoContenido.cloneNode(true);
+            clonTabla.classList.add('contenido-zoom-tabla'); // Clase para estilos extra en zoom
+            contenedorContenido.appendChild(clonTabla);
+        }
 
-    // Cerrar al tocar la "X"
-    btnCerrar.addEventListener('click', () => {
+        visor.classList.add('activo');
+        document.body.style.overflow = 'hidden'; // Previene scroll en el fondo
+    };
+
+    // Función para cerrar el visor
+    const cerrarVisor = () => {
         visor.classList.remove('activo');
+        document.body.style.overflow = ''; // Restaura scroll
+    };
+
+    // --- SELECCIONAR ELEMENTOS CLICKEABLES ---
+
+    // 1. Imágenes de la galería
+    const imagenesGaleria = document.querySelectorAll('.galeria-aulas img');
+    imagenesGaleria.forEach(img => {
+        img.addEventListener('click', () => abrirVisor(img, true));
     });
 
-    // Cerrar al tocar en cualquier parte del fondo negro
-    visor.addEventListener('click', (evento) => {
-        if (evento.target === visor) {
-            visor.classList.remove('activo');
+    // 2. Tablas de Horarios (NUEVO)
+    const tablasHorarios = document.querySelectorAll('.horarios-box');
+    tablasHorarios.forEach(tabla => {
+        // Añadimos el cursor pointer vía JS para indicar que es clickeable
+        tabla.style.cursor = 'pointer';
+        tabla.addEventListener('click', () => abrirVisor(tabla, false));
+    });
+
+    // --- EVENTOS DE CIERRE ---
+    btnCerrar.addEventListener('click', cerrarVisor);
+
+    // Cerrar al hacer clic en el fondo oscuro
+    visor.addEventListener('click', (e) => {
+        if (e.target === visor || e.target === contenedorContenido) {
+            cerrarVisor();
+        }
+    });
+
+    // Cerrar con tecla ESC
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && visor.classList.contains('activo')) {
+            cerrarVisor();
         }
     });
 });
