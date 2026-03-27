@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="Footer.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="javaScript.js"></script>
 </head>
 <body>
@@ -214,18 +216,18 @@
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis modi repudiandae quos unde hic, asperiores quam adipisci magni repellendus ipsam laudantium esse ullam, fugit officia. Accusamus minima laborum fugit beatae?</p>
                 </div>
             </div>
+             <div class="profesor-card">
+                <img src="./imag/jean0.png" alt="Professor">
+                <div class="info-overlay">
+                    <h3>Professor Jean Medina</h3>
+                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, commodi sequi. Alias dignissimos omnis assumenda cupiditate nam? Itaque blanditiis atque eveniet. Impedit, rerum ea veritatis quaerat recusandae explicabo voluptate tempora!</p>
+                </div>
+            </div>
             <div class="profesor-card">
                 <img src="./imag/fotoperfil.webp" alt="Professor">
                 <div class="info-overlay">
                     <h3>Professor Felipe C</h3>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque laudantium id in aliquam debitis quibusdam consectetur, deserunt incidunt, aut corporis atque quisquam, natus earum dolor eos sed? Molestiae, aliquam vel!</p>
-                </div>
-            </div>
-            <div class="profesor-card">
-                <img src="./imag/jean0.png" alt="Professor">
-                <div class="info-overlay">
-                    <h3>Professor Jean Medina</h3>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aliquid, commodi sequi. Alias dignissimos omnis assumenda cupiditate nam? Itaque blanditiis atque eveniet. Impedit, rerum ea veritatis quaerat recusandae explicabo voluptate tempora!</p>
                 </div>
             </div>
             <div class="profesor-card">
@@ -259,23 +261,49 @@
         </div>
     </section>
 
-    <section id="ubicacion">
-        <div class="contacto"></div>
-        <h2>Localização</h2>
-        <div class="mapa-box">
-           <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3617.8082896312944!2d-53.43823232565288!3d-24.93860001362835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f3d4875427b93f%3A0xb28483128c374164!2sTeam%20Cordeiro!5e0!3m2!1spt-BR!2sbr!4v1773593930339!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-           </iframe>
-        </div>
-        
-    </section>
-</main>
+   
 
-    <footer style="padding: 40px; text-align: center; color: #555; background: #000;">
-        <p>© 2026 Team Cordeiro Artes Marciais. Todos os direitos reservados.</p>
-    </footer>
-    <div id="visor-imagenes" class="visor-oculto">
-        <span class="cerrar-visor">&times;</span>
-        <div id="contenedor-contenido-ampliado"></div>
+<footer class="footer-principal">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <img src="./imag/logo-sinfondo-horizontal.png" alt="Logo Team Cordeiro" class="footer-logo">
+            <p>Mais que uma academia, uma família dedicada à arte marcial em Cascavel.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contato</h4>
+            <ul class="lista-contacto">
+                <li><i class="fas fa-phone"></i> (45) 98112-079</li>
+                <li><i class="far fa-envelope"></i> contato@teamcordeiro.com.br</li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Siga-nos</h4>
+            <div class="redes-sociales-iconos">
+                <a href="https://www.facebook.com" target="_blank" class="social-icon fb" title="Facebook">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/cordeiro_artes_marciais?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" class="social-icon ig" title="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://wa.me/554598112079" target="_blank" class="social-icon wa" title="WhatsApp">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+                <a href="https://www.youtube.com" target="_blank" class="social-icon yt" title="YouTube">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
     </div>
+    
+    <div class="footer-bottom">
+        <p>© 2026 Team Cordeiro Artes Marciais. Todos os direitos reservados.</p>
+    </div>
+</footer>
+<div id="visor-imagenes" class="visor-oculto">
+    <span class="cerrar-visor">&times;</span>
+    <div id="contenedor-contenido-ampliado"></div>
+</div>
 </body> 
 </html>

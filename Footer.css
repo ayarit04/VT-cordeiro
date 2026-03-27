@@ -1,0 +1,146 @@
+/* --- DISEÑO DE UBICACIÓN (TEXTO A LA IZQUIERDA, MAPA A LA DERECHA) --- */
+.ubicacion-contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    align-items: center;
+}
+
+.mapa-box, .direccion-info {
+    flex: 1; /* Dividen el espacio 50/50 */
+    min-width: 300px;
+}
+
+.direccion-info h3 {
+    color: #ed1c24;
+    margin-bottom: 20px;
+}
+
+.direccion-info h3 i, .horarios-box h4 i {
+    margin-right: 10px;
+    color: #ed1c24;
+}
+
+.btn-como-chegar {
+    display: inline-block;
+    background-color: #ed1c24;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    margin-top: 15px;
+}
+
+/* --- DISEÑO DEL FOOTER CON ICONOS REDES SOCIALES --- */
+.footer-principal {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 20px 20px;
+    border-top: 4px solid #ed1c24;
+}
+
+.footer-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 250px;
+}
+
+.footer-logo {
+    max-width: 180px;
+    margin-bottom: 20px;
+}
+
+.footer-col h4 {
+    color: #ed1c24;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    font-size: 1.1rem;
+}
+
+.lista-contacto {
+    list-style: none;
+    padding: 0;
+}
+
+.lista-contacto li {
+    margin-bottom: 10px;
+    color: #ccc;
+    display: flex;
+    align-items: center;
+}
+
+.lista-contacto li i {
+    margin-right: 10px;
+    color: #ed1c24;
+    font-size: 1.2rem;
+}
+
+/* NUEVOS ESTILOS PARA LOS ICONOS SOCIALES */
+.redes-sociales-iconos {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%; /* Hace que sea un círculo */
+    background-color: #ed1c24; /* Fondo rojo por defecto */
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.3rem; /* Tamaño del icono */
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.social-icon i {
+    color: #fff;
+}
+
+/* Efecto hover: los iconos crecen y se iluminan un poco */
+.social-icon:hover {
+    transform: scale(1.1) translateY(-3px);
+    box-shadow: 0 6px 12px rgba(237, 28, 36, 0.5);
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 50px;
+    padding-top: 20px;
+    border-top: 1px solid #222;
+    color: #555;
+    font-size: 0.8rem;
+}
+
+/* Ajuste para pantallas pequeñas */
+@media (max-width: 768px) {
+    .ubicacion-contenedor {
+        flex-direction: column-reverse; /* En móvil, el mapa irá ARRIBA del texto */
+    }
+    .footer-grid {
+        flex-direction: column;
+        text-align: center;
+    }
+    .lista-contacto li {
+        justify-content: center;
+    }
+    .redes-sociales-iconos {
+        justify-content: center;
+    }
+}
