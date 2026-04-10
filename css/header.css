@@ -79,7 +79,10 @@ font-size: 20px;
     display: none; /* Esconde o botão de matrícula em desktops */
 }
 .logo img {
-    max-width: 20rem
+    max-width: 20rem;
+    margin-left: 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 .logo-mobile {
     display: none;

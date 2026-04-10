@@ -341,43 +341,25 @@ body {
     background-color: transparent;
     padding: 40px;
     margin-bottom: 0px;
-    border-radius: 8px;
     width: 100%;
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
     box-sizing: border-box;/* Garante que o padding não aumente a largura total do box */
 
-    
-    /* LA CLAVE: Transición para que el fondo no cambie de golpe */
-    transition: all 0.5s ease; 
-    border: 1px solid transparent; 
-}
-
-
-/* para quitar el espacio del último texto */
-.historia-box p:last-child {
-    margin-bottom: 0;
-}
-
-/* EFEITO AO PASSAR O MOUSE NO BOX INTEIRO */
-.historia-box:hover {
-    background-color: #ed1c24; /* Cambia al rojo de la marca */
-    transform: translateY(-5px); /* Pequeño salto hacia arriba */
-    box-shadow: 0 15px 40px rgba(237, 28, 36, 0.3); /* Sombra roja sutil */
 }
 
 .historia-box h3 {
     font-size: 2rem;
-    color: #ed1c24;
+    color: #fff;
     margin-bottom: 0px;
     text-align: left;
-    transition: color 0.5s ease;
 }
 
 /* El título cambia a blanco para que se lea bien sobre el fondo rojo */
 .historia-box:hover h3 {
-    color: #fff;
+    color: #ed1c24; /* Mantém o título vermelho para contraste */
+    cursor: pointer;
 }
 
 .historia-box p {
@@ -394,6 +376,11 @@ body {
 .historia-box:hover p {
     color: #fff;
 }
+
+main {
+    margin-top: 50px;}
+
+
 /* =========================================
    CONTAINER E CARDS COM EFEITO HOVER
    ========================================= */
@@ -615,3 +602,12 @@ body {
     color: #fff;
     margin: 0;
 }
+
+@media (max-width: 550px) {
+    .box-missao, .box-visao, .box-valores {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 150px;
+    }
