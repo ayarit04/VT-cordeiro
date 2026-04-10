@@ -273,10 +273,6 @@ body {
 .cerrar-visor:hover {
     color: #ed1c24;
 }
- .galeria-aulas img {
-    object-fit: contain;
-    background-color: #111;
-}
 
 /* RESPONSIVIDADE */
 @media (max-width: 480px) {
@@ -617,4 +613,3 @@ body {
     color: #fff;
     margin: 0;
 }
-

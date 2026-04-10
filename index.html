@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="reset.css">
     <link rel="stylesheet" href="header.css">
     <link rel="stylesheet" href="Footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <script src="javaScript.js"></script>
 </head>
@@ -16,11 +17,14 @@
 <body>
     <header class="header">
         <div class="logo">
-            <img src="./imag/logo-sinfondo-horizontal.png" alt="Logo Vt Cordeiro">
+            <img  class="logo-pc" src="./imag/logo-sinfondo-horizontal.png" alt="Logo Vt Cordeiro">
+            <img class="logo-mobile" src="./imag/logo-sinfondo.png" alt="">
         </div>
-         <button class="btn-menu">Abrir</button>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfif3gMCPTQ-SCYz8BSiuObD-jfF6Jff7Tzp3gYptT61HIIng/viewform?usp=header"
+                target="_blank" class="btn-matricula btn-matricula-mobile">Matricule-se</a>
+         <button class="menu-open" id="menu"><i class="bi bi-list"></i></button>
         <nav class="nav">
-            <button class="btn-close">Fechar</button>
+            <button class="menu-close" id="menu-close"><i class="bi bi-x-circle-fill"></i></button>
             <ul class="menu">
                 <li><a href="index.html">Início</a></li>
                 <li><a href="sobre-nos.html">Sobre Nós</a>
@@ -51,10 +55,68 @@
                 <p>Jiu-Jitsu & Muay Thai para adultos e crianças em Cascavel.</p>
                 <div class="btns">
                     <a href="https://calendar.app.google/AABCszufzJfhbpmG7" target="_blank"
-                        class="btn btn-secondary">Agendar aula Experimental</a>
+                        class="btn btn-secondary">Agendar aula Experimental</a> 
                 </div>
+                <p><em>Referência em Cascavel há 15 anos</em></p>
             </div>
         </section>
 </main>
+
+        <footer class="footer-principal">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul class="lista-contacto">
+                        <li><i class="fas fa-phone"></i> (45) 98112-079</li>
+                        <li><i class="far fa-envelope"></i> contato@teamcordeiro.com.br</li>
+                        <li>
+                            <div class="mapa-interactivo">
+                                <input type="checkbox" id="check-mapa" class="mapa-check">
+
+                                <label for="check-mapa" class="btn-mapa-toggle">
+                                    <i class="fas fa-map-marked-alt"></i>
+                                    <span class="txt-abrir">Ver Mapa</span>
+                                    <span class="txt-cerrar">Fechar Mapa</span>
+                                </label>
+
+                                <div class="mapa-desplegable">
+                                    <iframe
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3620.8443560590833!2d-53.4619!3d-24.9572!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjTCsDU3JzI1LjkiUyA1M8KwMjcnNDIuOCJX!5e0!3m2!1spt-BR!2sbr!4v1711545600000!5m2!1spt-BR!2sbr"
+                                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy">
+                                    </iframe>
+                                </div>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h4 class="siga-nos">Siga-nos</h4>
+                    <div class="redes-sociales-iconos">
+                        <a href="https://www.facebook.com" target="_blank" class="social-icon fb" title="Facebook">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cordeiro_artes_marciais?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                            target="_blank" class="social-icon ig" title="Instagram">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="https://wa.me/554598112079" target="_blank" class="social-icon wa" title="WhatsApp">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.youtube.com" target="_blank" class="social-icon yt" title="YouTube">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 Team Cordeiro Artes Marciais. Todos os direitos reservados.</p>
+            </div>
+        </footer>
+        <div id="visor-imagenes" class="visor-oculto">
+            <span class="cerrar-visor">&times;</span>
+            <div id="contenedor-contenido-ampliado"></div>
+        </div>
 </body>
 </html>

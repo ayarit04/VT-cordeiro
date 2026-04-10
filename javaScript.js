@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+/*document.addEventListener("DOMContentLoaded", () => {
     const visor = document.getElementById('visor-imagenes');
     const contenedorContenido = document.getElementById('contenedor-contenido-ampliado');
     const btnCerrar = document.querySelector('.cerrar-visor');
@@ -63,4 +63,23 @@ document.addEventListener("DOMContentLoaded", () => {
             cerrarVisor();
         }
     });
+});
+
+
+
+/*menu responsivo*/
+document.addEventListener("DOMContentLoaded", () => {
+    const nav = document.querySelector(".nav");
+    const abrir = document.querySelector(".menu-open");
+    const cerrar = document.querySelector(".menu-close");
+
+    if (abrir && nav && cerrar) {
+        abrir.addEventListener("click", () => {
+            nav.classList.add("visible");
+        });
+
+        cerrar.addEventListener("click", () => {
+            nav.classList.remove("visible");
+        });
+    }
 });
