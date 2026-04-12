@@ -16,7 +16,7 @@
 
 
 <body>
-<header class="header">
+ <header class="header">
         <div class="logo">
             <img  class="logo-pc" src="../css/imag/logo-sinfondo-horizontal.png" alt="Logo Vt Cordeiro">
             <img class="logo-mobile" src="../css/imag/logo-sinfondo.png" alt="">
@@ -30,9 +30,8 @@
                 <li><a href="../index.html">Início</a></li>
                 <li><a href="sobre-nos.html">Sobre Nós</a>
                     <ul class="sub-menu">
-                        <li><a href="#historia">História</a></li>
-                        <li><a href="#mision">Missão</a></li>
-                        <li><a href="#vision">Visão</a></li>
+                        <li><a href="sobre-nos.html#historia">História</a></li>
+                        <li><a href="sobre-nos.html#profesores">Professores</a></li>
                     </ul>
                 </li>
                 <li><a href="treinos.html">Treinos</a>
@@ -40,7 +39,6 @@
                         <li><a href="treinos.html#jiujitsu">Jiu-Jitsu</a></li>
                         <li><a href="treinos.html#jiujitsu-kids">Jiu-Jitsu Kids</a></li>
                         <li><a href="treinos.html#muay-thai">Muay Thai</a></li>
-                        <li><a href="treinos.html#profesores">Professores</a></li>
                     </ul>
                 </li>
                 <li><a href="galeria.html">Galeria</a></li>
@@ -50,6 +48,41 @@
                 target="_blank" class="btn-matricula">Matricule-se</a>
         </nav>
     </header>
+
+    <main>
+        <section id="galeria-grid">
+    <h2>Nossa Galeria</h2>
+    <p class="intro-galeria">Explore nosso espaço e momentos de treino.</p>
+    
+    <div class="galeria-container">
+        <div class="galeria-item">
+            <img src="../css/imag/galeria-1.jpeg" alt="Treino de Jiu-Jitsu Team Cordeiro" class="galeria-img">
+        </div>
+        <div class="galeria-item">
+            <img src="../css/imag/galeria-2.jpeg" alt="Graduação de alunos" class="galeria-img">
+        </div>
+        <div class="galeria-item">
+            <img src="../css/imag/galeria-3.jpeg" alt="Espaço da academia Cascavel" class="galeria-img">
+        </div>
+        <div class="galeria-item">
+            <img src="../css/imag/galeria-4.jpeg" alt="Aula de Muay Thai" class="galeria-img">
+        </div>
+        </div>
+</section>
+
+<div id="visor-galeria" class="visor-overlay">
+    <span class="cerrar-visor-galeria">&times;</span>
+    
+    <button class="flecha-visor prev">&#10094;</button>
+    
+    <div class="contenedor-img-ampliada">
+        <img src="" alt="Imagen ampliada" id="img-ampliada-visor">
+    </div>
+    
+    <button class="flecha-visor next">&#10095;</button>
+</div>
+    </main>
+
      <footer class="footer-principal">
             <div class="footer-grid">
                 <div class="footer-col">
@@ -64,7 +97,7 @@
                             </text>
                         </svg>
                         <div class="selo-logo-centro">
-                            <img src="./css/imag/logo-sinfondo.png" alt="Logo Cordeiro">
+                            <img src="../css/imag/logo-sinfondo.png" alt="Logo Cordeiro">
                         </div>
                     </div>
                 </div>

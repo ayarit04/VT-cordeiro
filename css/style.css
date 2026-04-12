@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -17,40 +18,46 @@ body {
 .hero-alinhado {
     position: relative;
     width: 100%;
-    height: 90vh; /* Mantém a altura da seção */
+    height: 90vh;
+    /* Mantém a altura da seção */
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; /* Alinha o conteúdo ao topo */
+    justify-content: flex-start;
+    /* Alinha o conteúdo ao topo */
     align-items: center;
     text-align: center;
     overflow: hidden;
     color: #ffffff;
-    
+
     /* VARIÁVEL DE OPACIDADE (Ajuste o quanto escuro você quer) */
-    --opacidad-negro: 0.6; /* 0.0 é totalmente transparente, 1.0 é totalmente preto */
+    --opacidad-negro: 0.6;
+    /* 0.0 é totalmente transparente, 1.0 é totalmente preto */
 
     /* Define a imagem de fundo diretamente no container */
-    background-image: linear-gradient(
-        rgba(0, 0, 0, var(--opacidad-negro)), 
-        rgba(0, 0, 0, var(--opacidad-negro))
-    ), 
-    url("./imag/header-foto.jpeg"); /* Caminho da sua imagem */
+    background-image: linear-gradient(rgba(0, 0, 0, var(--opacidad-negro)),
+            rgba(0, 0, 0, var(--opacidad-negro))),
+        url("./imag/header-foto.jpeg");
+    /* Caminho da sua imagem */
 
     background-size: cover;
-    background-position: center bottom; /* Centraliza a imagem e ALINHA O FUNDO COM O RODAPÉ */
+    background-position: center bottom;
+    /* Centraliza a imagem e ALINHA O FUNDO COM O RODAPÉ */
     background-repeat: no-repeat;
 }
 
 /* Garante que o conteúdo fique no topo */
 .hero-alinhado .hero-content {
     position: relative;
-    z-index: 2; /* Fica acima do gradiente */
+    z-index: 2;
+    /* Fica acima do gradiente */
     padding: 20px;
-    margin-top: 150px; /* Ajuste manual para descer os textos do topo da janela */
+    margin-top: 150px;
+    /* Ajuste manual para descer os textos do topo da janela */
 }
 
 .hero h1 {
-    font-size: 3.5rem; /* Título bem grande */
+    font-size: 3.5rem;
+    /* Título bem grande */
     font-weight: 700;
     text-transform: uppercase;
     margin-bottom: 1rem;
@@ -87,8 +94,8 @@ body {
     border: 2px solid #ed1c24;
 }
 
-.btns{
-    margin-top:30px;
+.btns {
+    margin-top: 30px;
 }
 
 /* Estilos para la sección de Aulas */
@@ -110,7 +117,6 @@ body {
     padding: 10px 40px 40px 40px;
     margin-bottom: 30px;
     border-radius: 8px;
-    border-left: 5px solid #ed1c24;
     display: flex;
     flex-direction: column;
 }
@@ -133,84 +139,30 @@ body {
 }
 
 /* =========================================
-   QUADRO DE HORÁRIOS (SCHEDULE BOX)
-   ========================================= */
-.horarios-box {
-    background-color: #111;
-    border: 1px solid #333;
-    border-radius: 8px;
-    padding: 12px 15px;
-    margin: 15px 0 0 0;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-    order: 2;
-    max-width: 400px;
-    display: inline-block;
-}
-
-.horarios-box h4 {
-    color: #fff;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    border-bottom: 2px solid #ed1c24;
-    padding-bottom: 8px;
-    display: inline-block;
-}
-
-.horarios-lista {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.horarios-lista li {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 6px 0;
-    border-bottom: 1px solid #2a2a2a;
-    font-size: 0.85rem;
-}
-
-.horarios-lista li:last-child {
-    border-bottom: none;
-}
-
-.horarios-lista .dia {
-    color: #ccc;
-    font-weight: 500;
-}
-
-.horarios-lista .hora {
-    color: #ed1c24;
-    font-weight: bold;
-    background-color: rgba(237, 28, 36, 0.1);
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-}
-
-/* =========================================
    GALERIA DE FOTOS (AULAS)
    ========================================= */
 .galeria-aulas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Reduzido para fotos menores */
     gap: 15px;
-    margin-top: 0;
+    margin-top: 20px;
     order: 1;
 }
 
 .galeria-aulas img {
     width: 100%;
-    height: 180px;
+    /* Reduzido para fotos menores */
+    height: auto;
+    aspect-ratio: 3 / 2;
+    /* Define uma proporção de câmera padrão, evitando cortes excessivos */
     object-fit: cover;
+    /* Garante que a imagem preencha o espaço sem distorcer */
     border-radius: 8px;
     border: 2px solid transparent;
     transition: transform 0.4s ease, border-color 0.4s ease;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
 
 .galeria-aulas img:hover {
@@ -219,6 +171,42 @@ body {
     z-index: 2;
     position: relative;
 }
+
+/* Estilos para o link com overlay na galeria */
+.enlace-foto-galeria {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.overlay-click {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(237, 28, 36, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.enlace-foto-galeria:hover .overlay-click {
+    opacity: 1;
+}
+
+.overlay-click span {
+    color: #fff;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    border: 1px solid #fff;
+    padding: 4px 8px;
+}
+
 /* =========================================
    ESTILOS DEL VISOR CENTRADO (LIGHTBOX)
    ========================================= */
@@ -228,12 +216,14 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Fondo muy oscuro */
-    z-index: 9999; /* Por encima de todo */
+    background-color: rgba(0, 0, 0, 0.9);
+    /* Fondo muy oscuro */
+    z-index: 9999;
+    /* Por encima de todo */
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     /* Animación de entrada */
     opacity: 0;
     pointer-events: none;
@@ -250,8 +240,9 @@ body {
     max-width: 90%;
     max-height: 90vh;
     border-radius: 8px;
-    box-shadow: 0 0 30px rgba(237, 28, 36, 0.4); /* Brillo rojo alrededor de la foto */
-    
+    box-shadow: 0 0 30px rgba(237, 28, 36, 0.4);
+    /* Brillo rojo alrededor de la foto */
+
     /* Efecto de zoom al abrir */
     transform: scale(0.8);
     transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -278,12 +269,6 @@ body {
 
 /* RESPONSIVIDADE */
 @media (max-width: 480px) {
-    .horarios-lista li {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 3px;
-    }
-    
     .galeria-aulas {
         grid-template-columns: 1fr;
     }
@@ -314,14 +299,16 @@ body {
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 0;
 }
-#sobre-nos > * {
+
+#sobre-nos>* {
     position: relative;
     z-index: 1;
 }
 
 #sobre-nos h2 {
     font-size: 2.5rem;
-    color: #ed1c24; /* Vermelho da marca */
+    color: #ed1c24;
+    /* Vermelho da marca */
     margin-bottom: 10px;
 }
 
@@ -345,7 +332,8 @@ body {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-    box-sizing: border-box;/* Garante que o padding não aumente a largura total do box */
+    box-sizing: border-box;
+    /* Garante que o padding não aumente a largura total do box */
 
 }
 
@@ -358,7 +346,8 @@ body {
 
 /* El título cambia a blanco para que se lea bien sobre el fondo rojo */
 .historia-box:hover h3 {
-    color: #ed1c24; /* Mantém o título vermelho para contraste */
+    color: #ed1c24;
+    /* Mantém o título vermelho para contraste */
     cursor: pointer;
 }
 
@@ -378,7 +367,8 @@ body {
 }
 
 main {
-    margin-top: 50px;}
+    margin-top: 50px;
+}
 
 
 /* =========================================
@@ -386,61 +376,76 @@ main {
    ========================================= */
 .container-hover {
     width: 100%;
-    max-width: 1000px; /* Largura máxima do container */
+    max-width: 1000px;
+    /* Largura máxima do container */
     position: relative;
     display: flex;
-    justify-content: space-between; /* Espaçamento entre os cards */
-    gap: 30px; /* Distância entre os cards */
-    margin: 0 auto; /* Centraliza o container */
+    justify-content: space-between;
+    /* Espaçamento entre os cards */
+    gap: 30px;
+    /* Distância entre os cards */
+    margin: 0 auto;
+    /* Centraliza o container */
 }
 
 .card-hover {
     position: relative;
     cursor: pointer;
-    flex: 1; /* Faz os cards dividirem o espaço igualmente */
-    min-width: 300px; /* Largura mínima do card */
+    flex: 1;
+    /* Faz os cards dividirem o espaço igualmente */
+    min-width: 300px;
+    /* Largura mínima do card */
 }
 
 .card-hover .face-hover {
     width: 100%;
-    height: 200px; /* Altura de cada face */
+    height: 200px;
+    /* Altura de cada face */
     transition: 0.5s;
-    border-radius: 8px; /* Bordes suaves modernos */
-    overflow: hidden; /* Garante que o conteúdo não saia */
+    border-radius: 8px;
+    /* Bordes suaves modernos */
+    overflow: hidden;
+    /* Garante que o conteúdo não saia */
 }
 
 /* --- FACE 1: O LADO QUE APARECE PRIMEIRO --- */
 .card-hover .face-hover.face1 {
     position: relative;
-    background: #fff; /* Preto profundo para contraste */
+    background: #fff;
+    /* Preto profundo para contraste */
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
-    transform: translateY(100px); /* Posição inicial (deslocada) */
+    transform: translateY(100px);
+    /* Posição inicial (deslocada) */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
 /* EFEITO AO PASSAR O MOUSE (FACE 1 SOBE) */
 .card-hover:hover .face-hover.face1 {
-    background: #fff; /* Branco */
+    background: #fff;
+    /* Branco */
     transform: translateY(0);
 }
 
 .card-hover .face-hover.face1 .content-hover {
-    opacity: 0.9; /* Opacidade inicial (apagado) */
+    opacity: 0.9;
+    /* Opacidade inicial (apagado) */
     transition: 0.5s;
     width: 100%;
 }
 
 .card-hover:hover .face-hover.face1 .content-hover {
-    opacity: 1; /* Opacidade total no hover */
+    opacity: 1;
+    /* Opacidade total no hover */
 }
 
 /* Estilos para o Ícone/Imagem na FACE 1 */
 .icone-box {
     width: 100%;
-    height: 100px; /* Espaço para o ícone */
+    height: 100px;
+    /* Espaço para o ícone */
     margin-bottom: 10px;
     display: flex;
     justify-content: center;
@@ -449,21 +454,25 @@ main {
 
 /* APLICAÇÃO DAS IMAGENS EXCLUSIVAS */
 .box-missao {
-    background-image: url("./imag/missao.png"); /*  foto de Missão */
-    background-size: contain; /* Mostra a imagem inteira sem cortar */
+    background-image: url("./imag/missao.png");
+    /*  foto de Missão */
+    background-size: contain;
+    /* Mostra a imagem inteira sem cortar */
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .box-visao {
-    background-image: url("./imag/visao.png"); /* foto de Visão */
+    background-image: url("./imag/visao.png");
+    /* foto de Visão */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .box-valores {
-    background-image: url("./imag/valores.png"); /* foto de Valores */
+    background-image: url("./imag/valores.png");
+    /* foto de Valores */
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
@@ -482,14 +491,16 @@ main {
 /* --- FACE 2: O LADO QUE SURGE NO HOVER --- */
 .card-hover .face-hover.face2 {
     position: relative;
-    background: #ed1c24; /* Fundo vermelho */
+    background: #ed1c24;
+    /* Fundo vermelho */
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     box-sizing: border-box;
     box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
-    transform: translateY(-100px); /* Posição inicial (deslocada) */
+    transform: translateY(-100px);
+    /* Posição inicial (deslocada) */
 }
 
 /* EFEITO AO PASSAR O MOUSE (FACE 2 DESCE) */
@@ -500,7 +511,8 @@ main {
 .card-hover .face-hover.face2 .content-hover p {
     margin: 0;
     padding: 0;
-    color: #fff; /* Texto branco para leitura no vermelho */
+    color: #fff;
+    /* Texto branco para leitura no vermelho */
     font-size: 0.9rem;
     line-height: 1.5;
 }
@@ -604,10 +616,37 @@ main {
 }
 
 @media (max-width: 550px) {
-    .box-missao, .box-visao, .box-valores {
+
+    .box-missao,
+    .box-visao,
+    .box-valores {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
         height: 150px;
     }
+}
+
+.depoimentos {
+    margin-top: 100px;
+}
+
+.depoimentos h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #ed1c24;
+    margin: 0 0 10px 0;
+}
+
+.depoimentos h2:hover {
+    color: #FFF;
+    cursor: pointer;
+}
+
+.instagram-media{
+    max-width: 540px;
+    width: 100%;
+    margin-left: 30px;
+}
